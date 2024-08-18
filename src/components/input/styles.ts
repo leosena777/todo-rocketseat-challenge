@@ -2,7 +2,6 @@ import { styled } from "~/styles/stitches.config";
 
 export const Container = styled("div", {
   display: "flex",
-  maxWidth: "736px",
   width: "100%",
 
   backgroundColor: "$gray500",
@@ -14,7 +13,8 @@ export const Container = styled("div", {
 
 export const InputBase = styled("input", {
   flex: 1,
-  fontSize: "1rem",
+  fontSize: "0.9rem",
+  fontWeight: 300,
   backgroundColor: "transparent",
   border: "none",
   color: "$gray100",
