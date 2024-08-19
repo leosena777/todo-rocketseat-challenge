@@ -58,9 +58,20 @@ function App() {
           {!!tasks.length &&
             tasks.map((item) => (
               <TasksItem
+                key={item.id}
                 id={item.id}
                 description={item.description}
                 done={item.done}
+                onStatusChange={(id, status) => {
+                  setTasks(
+                    tasks.map((task) =>
+                      task.id === id ? { ...task, done: status } : task
+                    )
+                  );
+                }}
+                onRemove={() => {
+                  setTasks(tasks.filter((task) => task.id !== item.id));
+                }}
               ></TasksItem>
             ))}
           {!tasks.length && <TaskEmpty />}

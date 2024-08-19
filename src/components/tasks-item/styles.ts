@@ -14,10 +14,34 @@ export const Description = styled("p", {
   color: "white",
   fontWeight: "normal",
   fontSize: "0.8rem",
+  textDecoration: "line-through",
+  variants: {
+    done: {
+      true: {
+        textDecoration: "line-through",
+        color: "$gray300",
+      },
+      false: {
+        textDecoration: "none",
+        color: "white",
+      },
+    },
+  },
 });
 
 export const Status = styled("div", {
   border: "2px solid $blue",
+  width: "18px",
+  height: "18px",
+  borderRadius: "20px",
+  cursor: "pointer",
+});
+
+export const StatusDone = styled("div", {
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  backgroundColor: "$purple",
   width: "18px",
   height: "18px",
   borderRadius: "20px",
